@@ -67,3 +67,14 @@ div.gallery img {
     width: 100%;
     height: auto;
 }
+
+.vid {}
+
+video 
+{
+	background-color: #000000;
+}
+
+video::-webkit-media-controls-fullscreen-button {
+    display: none;
+}

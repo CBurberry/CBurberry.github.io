@@ -114,15 +114,13 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif}
 	<br><br>
 	<div style="width:70%;float:left;display:table-cell;">
 		<h5 style="padding:16; text-align:center;">Gameplay Video</h5>
-		<video style="margin-left:5%; margin-right:5%; width:90%; padding-top:10.5%; padding-bottom:1%; height:auto;" controls preload="none">
-		<!-- Video does not stretch when in fullscreen, check for solution -->
-		<!-- Add a backpanel image to make it clear the video player is there.-->
+		<video class="vid" style="margin-left:5%; margin-right:5%; width:90%; margin-top:10.5%; margin-bottom:1%;" controls preload="none">
 		  <source src="videos/CopyBeat.mp4" type="video/mp4">
 		  Your browser does not support the video tag or the mp4 filetype.
 		</video>
 	</div>
 		
-	<div style="padding-left:3%;padding-right:3%;width:24%;float:left;display:table-cell;">
+	<div style="padding-left:3%;padding-right:3%;width:24%; height:100%;float:left;display:table-cell;">
 	<h5 style="padding:16; text-align:center;">Screenshots</h5>
 		<div class="gallery">
 		  <a target="_blank" href="images/CopyBeatPrototypeTitle.png">
@@ -141,13 +139,14 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif}
 		</div>
 	</div>
 	
-	<div style="width:90%; height:auto; padding-top: 4%;">
-		<h6 style="text-align:left;">Project Files:</h6>
+	<div class="w3-container" style="width:90%; height:auto; margin-bottom: 5%;">
+		<br>
+		<h6 style="text-align:left; ">Project Files:</h6>
 		<br>
 		<h6 style="text-align:left;">APK download link:</h6>
 		<br>
 		<h6 style="text-align:left;">Description:</h6>
-		<p class="subsection-plaintext">The game has 5 pre-loaded songs packaged in the fmod master bank.
+		<p class="subsection-plaintext">The game has 5 pre-loaded songs packaged in the FMOD master bank.
 		These songs can be selected by pressing on their thumbnail in the song select screen. 
 		This prompts you with a beatmap selection box which dynamically loads any saved beatmap files.
 		<br><br>
@@ -227,7 +226,7 @@ function hide_portfolio()
 
 //Read more scripts
 function link_click(clicked_element) 
-{	//alert(clicked_element + " clicked!");
+{	
 	hide_portfolio();
 	switch(clicked_element) 
 	{
@@ -252,6 +251,10 @@ function reset_subsections()
 	$('#enron-info').addClass('hidden');
 	$('#copybeat-info').addClass('hidden');
 	$('#asteroids-info').addClass('hidden');
+	$('.vid').each(function() 
+		{
+			this.pause();
+		});
 }
 
 
