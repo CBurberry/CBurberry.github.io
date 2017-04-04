@@ -108,8 +108,26 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif}
   </div>
   
   <!-- Subsection contents-->
-  <div id="copybeat-info" class="subsection-content hidden">
+  <div id="copybeat-info" class="subsection-content hidden w3-container">
+	<a href="javascript:show_portfolio()" style="float:left; width:100%;"><- BACK</a>
+	<h2 class="subsection-title"><b>CopyBeat Game</b></h2>
+	<br><br>
 	<p>copybeat content</p>
+	<!--Video player example (without preload)
+	<video controls preload="none">
+	  <source src="movie.mp4" type="video/mp4">
+	  <source src="movie.ogg" type="video/ogg">
+	  Your browser does not support the video tag.
+	</video>
+	-->
+	<!--image popout example
+		<div class="gallery">
+		  <a target="_blank" href="img_fjords.jpg">
+			<img src="img_fjords.jpg" alt="Trolltunga Norway" width="300" height="200">
+		  </a>
+		  <div class="desc">Add a description of the image here</div>
+		</div>
+	-->
   </div>
   
   <div id="asteroids-info" class="subsection-content hidden">
@@ -166,7 +184,7 @@ function hide_portfolio()
 
 //Read more scripts
 function link_click(clicked_element) 
-{	alert(clicked_element + " clicked!");
+{	//alert(clicked_element + " clicked!");
 	hide_portfolio();
 	switch(clicked_element) 
 	{

@@ -19,19 +19,19 @@
 
 #copybeat-info 
 {
-	color:blue;
+	
 }
 #asteroids-info
 {
-	color:red;
+	
 }
 #3dmaze-info 
 {
-	color:green;
+	
 }
 #enron-info
 {
-	color:orange;
+	
 }
 
 .hidden 
@@ -42,4 +42,28 @@
 .subsection-content 
 {
 	
+}
+
+.subsection-title 
+{
+	float:left; 
+	width:100%;
+	display:table-cell;
+	text-align:center;
+}
+
+div.gallery {
+    margin: 5px;
+    border: 1px solid #ccc;
+    float: left;
+    width: 180px;
+}
+
+div.gallery:hover {
+    border: 1px solid #777;
+}
+
+div.gallery img {
+    width: 100%;
+    height: auto;
 }
