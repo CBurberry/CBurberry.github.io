@@ -6,12 +6,6 @@
 	
 }
 
-.size-limit 
-{
-	width: 100%;
-	height: auto;
-}
-
 #portfolio-content 
 {
 	
@@ -50,13 +44,19 @@
 	width:100%;
 	display:table-cell;
 	text-align:center;
+	padding-bottom: 3%;
+}
+.subsection-plaintext 
+{
+	padding-left: 2%;
+	padding-right: 2%;
+	font-size: 12px;
 }
 
 div.gallery {
     margin: 5px;
     border: 1px solid #ccc;
     float: left;
-    width: 180px;
 }
 
 div.gallery:hover {

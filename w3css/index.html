@@ -112,22 +112,65 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif}
 	<a href="javascript:show_portfolio()" style="float:left; width:100%;"><- BACK</a>
 	<h2 class="subsection-title"><b>CopyBeat Game</b></h2>
 	<br><br>
-	<p>copybeat content</p>
-	<!--Video player example (without preload)
-	<video controls preload="none">
-	  <source src="movie.mp4" type="video/mp4">
-	  <source src="movie.ogg" type="video/ogg">
-	  Your browser does not support the video tag.
-	</video>
-	-->
-	<!--image popout example
+	<div style="width:70%;float:left;display:table-cell;">
+		<h5 style="padding:16; text-align:center;">Gameplay Video</h5>
+		<video style="margin-left:5%; margin-right:5%; width:90%; padding-top:10.5%; padding-bottom:1%; height:auto;" controls preload="none">
+		<!-- Video does not stretch when in fullscreen, check for solution -->
+		<!-- Add a backpanel image to make it clear the video player is there.-->
+		  <source src="videos/CopyBeat.mp4" type="video/mp4">
+		  Your browser does not support the video tag or the mp4 filetype.
+		</video>
+	</div>
+		
+	<div style="padding-left:3%;padding-right:3%;width:24%;float:left;display:table-cell;">
+	<h5 style="padding:16; text-align:center;">Screenshots</h5>
 		<div class="gallery">
-		  <a target="_blank" href="img_fjords.jpg">
-			<img src="img_fjords.jpg" alt="Trolltunga Norway" width="300" height="200">
+		  <a target="_blank" href="images/CopyBeatPrototypeTitle.png">
+			<img src="images/CopyBeatPrototypeTitle.png" alt="title screen">
 		  </a>
-		  <div class="desc">Add a description of the image here</div>
 		</div>
-	-->
+		<div class="gallery">
+		  <a target="_blank" href="images/CopyBeatPrototypeSelection.png">
+			<img src="images/CopyBeatPrototypeSelection.png" alt="selection screen">
+		  </a>
+		</div>
+		<div class="gallery">
+		  <a target="_blank" href="images/CopyBeatPlayingScreen.png">
+			<img src="images/CopyBeatPlayingScreen.png" alt="playing screen">
+		  </a>
+		</div>
+	</div>
+	
+	<div style="width:90%; height:auto; padding-top: 4%;">
+		<h6 style="text-align:left;">Project Files:</h6>
+		<br>
+		<h6 style="text-align:left;">APK download link:</h6>
+		<br>
+		<h6 style="text-align:left;">Description:</h6>
+		<p class="subsection-plaintext">The game has 5 pre-loaded songs packaged in the fmod master bank.
+		These songs can be selected by pressing on their thumbnail in the song select screen. 
+		This prompts you with a beatmap selection box which dynamically loads any saved beatmap files.
+		<br><br>
+		After the selection and countdown, buttons play an animation based on the saved trigger value for that button.
+		The time at which the user hits the button as it's flashing determines the type of hit (great/cool/miss). Hits are counted for end of song display.
+		The animation values are found from a beatmap struct that contains a 2d float array for the hit timings.
+		Every frame the 2d float array is iterated through and determines the current button state and its resulting visual state through accompanying variables.
+		Each button is connected to a function that matches the hit button and checks if the button is within a period/has been hit before to determine if any 
+		visual change occurs or if the input is ignored.
+		<br><br>
+		Beatmaps can be created by the user by pressing 'input mode' (red if active) and selecting the 
+		song to make a beatmap for. The user gets a button grid identical to play mode and as the music plays can enter their own periods for animations.
+		Upon hit the button turns yellow and blocks any further input until the period length is over.
+		Many systems are recycled from the play mode for this functionality. At the end of the input, the user can choose to redo/save/play their new map.
+		Save functionality is done using UE4's standard save slots.
+		</p>
+		<h6 style="text-align:left;">Notes:</h6>
+		<p class="subsection-plaintext">
+		- The device used in the gameplay video is a chinese tablet dual core processor @1.6GHz and an ARM Mali 400MP (quad core), android 4.1, 1024x768 resolution.
+		<br>
+		- This game is not complete, I aim to add dynamic user end music loading and beatmap loading through files in the near future as well as overall polish.
+		</p>
+	</div>
   </div>
   
   <div id="asteroids-info" class="subsection-content hidden">
