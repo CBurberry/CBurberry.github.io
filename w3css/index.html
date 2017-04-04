@@ -6,8 +6,8 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="4/w3.css">
-<link rel="stylesheet" href="custom.css">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+<link rel="stylesheet" href="custom.css">
 <style>
 body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif}
 </style>
@@ -25,8 +25,8 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif}
     <h3 style="padding-bottom:12px;text-align:center;"><b>BurberryC06's</b><br><b>Broom Closet</b></h3>
   </div>
   <div class="w3-bar-block">
-    <a href="#portfolio" onclick="w3_close()" class="w3-bar-item w3-button w3-padding w3-text-teal"><i class="fa fa-th-large fa-fw w3-margin-right"></i>PORTFOLIO</a> 
-    <a href="#about" onclick="scroll_to_about()" class="w3-bar-item w3-button w3-padding w3-text-teal"><i class="fa fa-user fa-fw w3-margin-right"></i>ABOUT</a> 
+    <a href="#portfolio" onclick="portfolio_link()" class="w3-bar-item w3-button w3-padding w3-text-teal"><i class="fa fa-th-large fa-fw w3-margin-right"></i>PORTFOLIO</a> 
+    <a href="#about" onclick="about_link()" class="w3-bar-item w3-button w3-padding w3-text-teal"><i class="fa fa-user fa-fw w3-margin-right"></i>ABOUT</a> 
   </div>
 </nav>
 
@@ -47,62 +47,82 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif}
     </div>
   </header>
   
-  <!-- University projects-->
-  <div style="width:50%;display:table-cell;" class="w3-container w3-red">
-  <h3 style="text-align:center;"><u>University Projects</u></h3>
-    <div class="w3-container w3-margin-bottom">
-      <img src="images/3dMaze1st.png" alt="maze1stperson" style="width:50%; float:left;">
-	  <img src="images/3dMazeTop.png" alt="maze1stperson" style="width:50%; float:right;">
-      <div class="w3-container w3-white">
-        <p><b>3D Maze (Windows)<br>Created with:</b> C++ & OpenGL 1</p>
-        <p>Coursework for Computer Graphics module in year 3.<br>Arrow keys to move, HOME to view solution line, m/M to view top-down map.</p>
-		<a href="javascript:link_click('a1')" style="float:right;padding-bottom:8px;">read more</a>
-      </div>
-    </div>
-    <div class="w3-container w3-margin-bottom">
-      <img src="images/App_view.png" alt="App_view" style="width:100%">
-      <div class="w3-container w3-white">
-        <p><b>Data Navigation Application (Java 1.8 required)<br>Created with:</b> Java 1.8 & JavaFX</p>
-        <p>Team Coursework for Software Engineering module in year 2. Required self-teaching JavaFX, acted as UI developer/designer & project lead.<br>
-		Application parses a directory structure of emails from the Enron Email Corpus and highlights top communicating individuals and their pairwise message rates.</p>
-		<a href="javascript:link_click('a2')" style="float:right;padding-bottom:8px;">read more</a>
-      </div>
-    </div>
-   </div>
+  <!-- Wrapper div/class for dynamic portfolio content-->
+  <div id="portfolio-content">
+	  <!-- University projects-->
+	  <div style="width:50%;display:table-cell;" class="w3-container w3-red">
+	  <h3 style="text-align:center;"><u>University Projects</u></h3>
+		<div class="w3-container w3-margin-bottom">
+		  <img src="images/3dMaze1st.png" alt="maze1stperson" style="width:50%; float:left;">
+		  <img src="images/3dMazeTop.png" alt="maze1stperson" style="width:50%; float:right;">
+		  <div class="w3-container w3-white">
+			<p><b>3D Maze (Windows)<br>Created with:</b> C++ & OpenGL 1</p>
+			<p>Coursework for Computer Graphics module in year 3.<br>Arrow keys to move, HOME to view solution line, m/M to view top-down map.</p>
+			<a href="javascript:link_click(1)" style="float:right;padding-bottom:8px;color:blue;">read more</a>
+		  </div>
+		</div>
+		<div class="w3-container w3-margin-bottom">
+		  <img src="images/App_view.png" alt="App_view" style="width:100%">
+		  <div class="w3-container w3-white">
+			<p><b>Data Navigation Application (Java 1.8 required)<br>Created with:</b> Java 1.8 & JavaFX</p>
+			<p>Team Coursework for Software Engineering module in year 2. Required self-teaching JavaFX, acted as UI developer/designer & project lead.<br>
+			Application parses a directory structure of emails from the Enron Email Corpus and highlights top communicating individuals and their pairwise message rates.</p>
+			<a href="javascript:link_click(2)" style="float:right;padding-bottom:8px;color:blue;">read more</a>
+		  </div>
+		</div>
+	   </div>
+	  
+	  <!-- Personal projects-->
+	  <div style="width:50%;display:table-cell;" class="w3-container w3-green">
+	  <h3 style="text-align:center;"><u>Personal Projects</u></h3>
+		<div class="w3-container w3-margin-bottom">
+		  <img src="images/CopyBeatPreview.png" alt="CopyBeatPreview" style="width:100%">
+		  <div class="w3-container w3-white">
+			<p><b>CopyBeat Game (Android)<br>Created with:</b> Unreal Engine 4.14 / Blueprint (Visual Scripting) & FMOD plugin</p>
+			<p>A clone of Konami's arcade game Jubeat/Ubeat, This was my first ever game project and first usage of Unreal Engine.
+			<br>Music plays and buttons light up in correspondence to a saved input 'beatmap'. Tap lighted buttons to score.</p>
+			<a href="javascript:link_click(3)" style="float:right;padding-bottom:8px;color:blue;">read more</a>
+		  </div>
+		</div>
+		<div class="w3-container w3-margin-bottom">
+		  <img src="images/AsteroidsPreview.png" alt="AsteroidsPreview" style="width:100%">
+		  <div class="w3-container w3-white">
+			<p><b>Asteroids 2.0 Game (Windows/OSX/Linux)<br>Created with:</b> Unity3D 5.5 / C#</p>
+			<p>Search For A Star 2017 entry submission for round 2. Created in a week. First time using Unity & C#. 
+			Arcade 'Asteroids' style game with some variations such as a shop for ship upgrades, offline two player mode,
+			& high speed instakill 'Shooting Asteroids'.</p>
+			<a href="javascript:link_click(4)" style="float:right;padding-bottom:8px;color:blue;">read more</a>
+		  </div>
+		</div>
+	  </div>	
+		
+	  <div class="w3-topbar w3-container w3-padding-large" style="margin: 32px 0 32px 0;">
+		<h4 id="about-location"><b>About Me</b></h4>
+		<p>My name is Christian Burberry and here is a selection of what I've been up to during my years as a programmer (or programmer fledgling if more appropriate).<br>
+		At this point of writing I am close to finishing my Computer Science BSc amd I hope you enjoy my work.<br><br>To graduating and breaking into the games industry!<br></p> 
+		<a href="https://www.linkedin.com/in/christian-burberry-66b800140/">LinkedIn profile</a>
+		<hr>  
+	  </div>
   
-  <!-- Personal projects-->
-  <div style="width:50%;display:table-cell;" class="w3-container w3-green">
-  <h3 style="text-align:center;"><u>Personal Projects</u></h3>
-    <div class="w3-container w3-margin-bottom">
-	  <img src="images/CopyBeatPreview.png" alt="CopyBeatPreview" style="width:100%">
-      <div class="w3-container w3-white">
-        <p><b>CopyBeat Game (Android)<br>Created with:</b> Unreal Engine 4.14 / Blueprint (Visual Scripting) & FMOD plugin</p>
-        <p>A clone of Konami's arcade game Jubeat/Ubeat, This was my first ever game project and first usage of Unreal Engine.
-		<br>Music plays and buttons light up in correspondence to a saved input 'beatmap'. Tap lighted buttons to score.</p>
-		<a href="javascript:link_click('b1')" style="float:right;padding-bottom:8px;">read more</a>
-      </div>
-    </div>
-    <div class="w3-container w3-margin-bottom">
-      <img src="images/AsteroidsPreview.png" alt="AsteroidsPreview" style="width:100%">
-      <div class="w3-container w3-white">
-        <p><b>Asteroids 2.0 Game (Windows/OSX/Linux)<br>Created with:</b> Unity3D 5.5 / C#</p>
-        <p>Search For A Star 2017 entry submission for round 2. Created in a week. First time using Unity & C#. 
-		Arcade 'Asteroids' style game with some variations such as a shop for ship upgrades, offline two player mode,
-		& high speed instakill 'Shooting Asteroids'.</p>
-		<a href="javascript:link_click('b2')" style="float:right;padding-bottom:8px;">read more</a>
-      </div>
-    </div>
-  </div>	
-	
-  <div class="w3-topbar w3-container w3-padding-large" style="margin: 32px 0 32px 0;">
-    <h4 id="about-location"><b>About Me</b></h4>
-    <p>My name is Christian Burberry and here is a selection of what I've been up to during my years as a programmer (or programmer fledgling if more appropriate).<br>
-	At this point of writing I am close to finishing my Computer Science BSc amd I hope you enjoy my work.<br><br>To graduating and breaking into the games industry!<br></p> 
-	<a href="https://www.linkedin.com/in/christian-burberry-66b800140/">LinkedIn profile</a>
-    <hr>  
+	  <div class="w3-black w3-center w3-padding-24">Powered by w3.css & jQuery</div>
   </div>
   
-  <div class="w3-black w3-center w3-padding-24">Powered by w3.css & jQuery</div>
+  <!-- Subsection contents-->
+  <div id="copybeat-info" class="subsection-content hidden">
+	<p>copybeat content</p>
+  </div>
+  
+  <div id="asteroids-info" class="subsection-content hidden">
+	<p>asteroids content</p>
+  </div>
+  
+  <div id="3dmaze-info" class="subsection-content hidden">
+	<p>3dmaze content</p>
+  </div>
+  
+  <div id="enron-info" class="subsection-content hidden">
+	<p>enron content</p>
+  </div>
 
 <!-- End page content -->
 </div>
@@ -119,20 +139,62 @@ function w3_close() {
     document.getElementById("myOverlay").style.display = "none";
 }
 
-function scroll_to_portfolio() 
+//Scrolling page link scripts
+function portfolio_link() 
 {
+	show_portfolio();
 	window.location.hash = '#portfolio-location';
 }
 
-function scroll_to_about() 
+function about_link() 
 {
+	show_portfolio();
 	window.scrollTo(0,document.body.scrollHeight);
 }
 
-function link_click(myMessage) 
-{	
-	alert(myMessage);
+function show_portfolio() 
+{
+	document.getElementById("portfolio-content").style.display = "inline";
+	//hide other id containers
+	reset_subsections();
 }
+
+function hide_portfolio() 
+{
+	document.getElementById("portfolio-content").style.display = "none";
+}
+
+//Read more scripts
+function link_click(clicked_element) 
+{	alert(clicked_element + " clicked!");
+	hide_portfolio();
+	switch(clicked_element) 
+	{
+		case 1:
+			$('#3dmaze-info').removeClass('hidden');
+			break;
+		case 2:
+			$('#enron-info').removeClass('hidden');
+			break;
+		case 3:
+			$('#copybeat-info').removeClass('hidden');
+			break;
+		case 4:
+			$('#asteroids-info').removeClass('hidden');
+			break;
+	}
+}
+
+function reset_subsections() 
+{
+	$('#3dmaze-info').addClass('hidden');
+	$('#enron-info').addClass('hidden');
+	$('#copybeat-info').addClass('hidden');
+	$('#asteroids-info').addClass('hidden');
+}
+
+
+
 </script>
 
 </body>

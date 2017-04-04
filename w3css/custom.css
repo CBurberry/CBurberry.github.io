@@ -11,3 +11,35 @@
 	width: 100%;
 	height: auto;
 }
+
+#portfolio-content 
+{
+	
+}
+
+#copybeat-info 
+{
+	color:blue;
+}
+#asteroids-info
+{
+	color:red;
+}
+#3dmaze-info 
+{
+	color:green;
+}
+#enron-info
+{
+	color:orange;
+}
+
+.hidden 
+{
+	display:none;
+}
+
+.subsection-content 
+{
+	
+}
