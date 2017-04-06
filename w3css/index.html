@@ -38,7 +38,8 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif}
 
   <!-- Header -->
   <header id="portfolio">
-    <a href="#"><img src="../w3images/avatar_g2.jpg" style="width:65px;" class="w3-circle w3-right w3-margin w3-hide-large w3-hover-opacity"></a>
+	<!-- Code for small image portrait, left empty for now -->
+    <a href="#"><img src="" style="width:0px;" class="w3-circle w3-right w3-margin w3-hide-large w3-hover-opacity"></a>
     <span class="w3-button w3-hide-large w3-xxlarge w3-hover-text-grey" onclick="w3_open()"><i class="fa fa-bars"></i></span>
     <div class="w3-container">
     <h1 id="portfolio-location"><b>My Portfolio</b></h1>
@@ -249,8 +250,57 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif}
 	
   </div>
   
-  <div id="3dmaze-info" class="subsection-content hidden">
-	<p>3dmaze content</p>
+  <!-- Subsection contents-->
+  <div id="3dmaze-info" class="subsection-content hidden w3-container">
+	<a href="javascript:show_portfolio()" style="float:left; width:100%;"><- BACK</a>
+	<h2 class="subsection-title"><b>3D Maze (Windows Application)</b></h2>
+	<br><br>
+	<div style="width:70%;float:left;display:table-cell;">
+		<h5 style="padding:16; text-align:center;">Demonstration Video</h5>
+		<video class="vid" style="display:block; margin: 0 auto; width:50%" controls preload="none">
+		  <source src="videos/3dmaze.mp4" type="video/mp4">
+		  <!-- replace video with asteroids gameplay -->
+		  Your browser does not support the video tag or the mp4 filetype.
+		</video>
+	</div>
+	
+	<div style="padding-left:3%;padding-right:3%;width:24%; height:100%;float:left;display:table-cell;">
+	<h5 style="padding:16; text-align:center;">Screenshots</h5>
+		<div class="gallery">
+		  <a target="_blank" href="images/3dMaze1st.png">
+			<img src="images/3dMaze1st.png" alt="First Person View">
+		  </a>
+		</div>
+		<div class="gallery">
+		  <a target="_blank" href="images/3dMazeTop.png">
+			<img src="images/3dMazeTop.png" alt="Map View">
+		  </a>
+		</div>
+	</div>
+	
+	<div class="w3-container" style="width:90%; height:auto; margin-bottom: 5%;">
+		<br>
+		<a style="text-align:left; font-size:16px;" href="https://github.com/Necrokamios/3DMaze"><u><b>Github Repository</u></b></a>
+		<br>
+		<h6 style="text-align:left;">Description:</h6>
+		<p class="subsection-plaintext">
+		This project involved using basic OpenGL 1 and C++ to create one of several tasks. I chose the 3D maze becuase it I believed it would be sufficiently challenging 
+		and possibly extensible to another project at some point with its ability to have a top down map and a first person perspective. 
+		Although I haven't made any moves thus far in that direction. 
+		It would probabaly be best to learn modern OpenGL instead for that if I do end up taking that route. 
+		<br>
+		The program has hard coded walls and includes prevention of movement by the user into a wall if a movement moves into a wall.
+		The solution line is also hard coded but involves using a vector as a stack-like structure where if the camera moves towards the line verticies it pops, 
+		and otherwise pushes the previous camera position into the stack.
+		<br><br>
+		The turning 'animation' was done by utilising the Idle functionality where I set a flag to cue a custom Idle function that starts a turn and turns off the idle flag
+		when two 45 degree turns are made. Camera turns are based on multiplying the camera by a rotation matrix. This project was completed in four days.
+		</p>
+		<h6 style="text-align:left;">Notes:</h6>
+		<p class="subsection-plaintext">
+		The 'You're Winner' text is a personal touch, (becuase memes are fun).
+		</p>
+	</div>
   </div>
   
   <div id="enron-info" class="subsection-content hidden">
