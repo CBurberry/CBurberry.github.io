@@ -13,20 +13,26 @@
 
 #copybeat-info 
 {
-	
 }
 #asteroids-info
 {
-	
 }
 #3dmaze-info 
 {
-	
 }
 #enron-info
 {
-	
 }
+#first-info 
+{
+}
+#bitmap-info
+{
+}
+#code-info
+{
+}
+
 
 .hidden 
 {
@@ -51,6 +57,13 @@
 	padding-left: 2%;
 	padding-right: 2%;
 	font-size: 12px;
+}
+
+.subsection-mediumtext 
+{
+	padding-left: 2%;
+	padding-right: 2%;
+	font-size: 14px;
 }
 
 div.gallery {

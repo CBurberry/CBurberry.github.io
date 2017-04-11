@@ -26,7 +26,7 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif}
   </div>
   <div class="w3-bar-block">
     <a href="#portfolio" onclick="portfolio_link()" class="w3-bar-item w3-button w3-padding w3-text-teal"><i class="fa fa-th-large fa-fw w3-margin-right"></i>PORTFOLIO</a> 
-    <a href="#about" onclick="about_link()" class="w3-bar-item w3-button w3-padding w3-text-teal"><i class="fa fa-user fa-fw w3-margin-right"></i>ABOUT</a> 
+    <a href="#about" onclick="about_link()" class="w3-bar-item w3-button w3-padding w3-text-teal"><i class="fa fa-user fa-fw w3-margin-right"></i>ABOUT ME</a> 
   </div>
 </nav>
 
@@ -173,10 +173,6 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif}
 	
 	<div class="w3-container" style="width:90%; height:auto; margin-bottom: 5%;">
 		<br>
-		<h6 style="text-align:left; ">Project Files:</h6>
-		<br>
-		<h6 style="text-align:left;">APK download link:</h6>
-		<br>
 		<h6 style="text-align:left;">Description:</h6>
 		<p class="subsection-plaintext">The game has 5 pre-loaded songs packaged in the FMOD master bank.
 		These songs can be selected by pressing on their thumbnail in the song select screen. 
@@ -278,9 +274,65 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif}
 		I've only provided the windows' executable on itch.io, but it can be built for OSX & Linux using the project files in the github repository.
 		</p>
 	</div>
-	
   </div>
   
+  <!-- subsection contents -->
+  <div id="bitmap-info" class="subsection-content hidden">
+	<a href="javascript:show_portfolio()" style="float:left; width:98%; margin-left:2%;"><- BACK</a>
+	<h2 class="subsection-title"><b>RGBA PNG to Pixel Collision Map</b></h2>
+	<br><br>
+	<div style="width:98%; margin-left:2%;float:left;display:table-cell;">
+	<a style="text-align:left; font-size:16px;" href="https://github.com/Necrokamios/PNGUtilities"><u><b>Github Repository</u></b></a>
+		<ul>
+			<li>This version takes in filename for target image and uses a custom exception class to indicate errors.</li>
+			<li>As the purpose of this program was just to get alpha collision matrices, only RGBA png's will be excepted, otherwise an error is thrown.</li>
+			<li>Input images for alpha output must be square in dimension.</li>
+		</ul>
+		<br>
+		<h6 style="text-align:left;">Description:</h6>
+		<p class="subsection-mediumtext">
+		The reason this program came to be was because I was reading up on retro sonic guides that went into detail on how slopes worked in Sonic the Hedgehog 1-3. 
+		Slopes were pixel perfect and used outcoming rays from the Sonic avatar to determine if there was a block ahead, it it was below the ray height, Sonic would move onto it and otherwise push against it.
+		For more into that, I suggest a read at:<a href="http://info.sonicretro.org/Sonic_Physics_Guide"> http://info.sonicretro.org/Sonic_Physics_Guide</a>
+		<br>
+		The idea was such that if a level was being created, the foreground on which sonic could appear to move on could be used as a collision layer also generated from the pixels. 
+		This may be a very expensive way of handling things in terms of collision systems even at the low resolutions the original sonic games "ran" (:P) at. I haven't tested it as a collision system so I can't say how costly it is.
+		<br><br>
+		The program uses libpng to read the file header and decompress the pixel data, then copies the pixel data into heap allocated memory for each row of pixels (each pixel is 4x unsigned char for RGBA).
+		A new text file is created based on the input image file name and iterates through each 4th value in the 2D array of pixel data to get just the alpha value for that pixel and sets the text value for that 
+		pixel to 0 if equals 0 and 1 otherwise. The idea behind this being that sonic can collide with the layer as long as its not entirely transparent. (In terms of adding colour to the background / foreground, think layered images 
+		and just using this layer for the alpha-collisions).
+		<br><br>
+		The program also offers a functionality for splitting tilemaps into the square dimension images based on the input dimension per image. I've also had it take only RGBA images, but this was more of a tacked on functionality that would add
+		to the main function of the program.
+		</p>
+	</div>
+  </div>
+  
+  <!-- subsection contents -->
+  <div id="code-info" class="subsection-content hidden">
+	<a href="javascript:show_portfolio()" style="float:left; width:98%; margin-left:2%;"><- BACK</a>
+	<h2 class="subsection-title"><b>Additional Game-Engine Related Code</b></h2>
+	<br><br>
+	<div style="width:98%; margin-left:2%;float:left;display:table-cell;">
+	<a style="text-align:left; font-size:16px;" href="https://github.com/Necrokamios/EngineUtils"><u><b>Github Repository</u></b></a>
+		<ul>
+			<li>Controller code and game loop code make use of SFML graphics for text rendering to screen and window rendering, can be removed if not planning on using those SFML features.</li>
+		</ul>
+		<br>
+		<h6 style="text-align:left;">Description:</h6>
+		<ol type="1" style="font-size:14px;">
+			<li>Game loop uses gameprogrammingpatterns.com game loop style of variable rendering, fixed update where if the visible framerate lags behind, update steps in that loop iteration are increased to matches
+			the average update-per-frame ratio (e.g. 100 physic steps per 60 renders), set to render using SFML graphics, can be replaced. Also set a fixed framerate of 60fps (did this by consuming time in the frame if its < 1/60).</li>
+			<li>Controller code uses SFML's sf:Joystick class to check controllers' buttons and axis values. The problem with SFML's implementation is that it is reliant on the Windows Multimedia Library (preceeded by DirectInput) 
+			and doesn't include out of the box vibration control or separate axis binding of the left and right triggers (on a default xbox360 wired the L2 and R2 are on the same axis as negative and positive).</li>
+			<li>Collision code assumes that the screen is of a certain resolution and that the collision world is rebuilt every step. For each AABB that we chec collisions for we check what cells of the grid it occupies 
+			and add to the list of occupied entities in that cell to the cell data, when the cell data is sorted afterwards, if we get two or more entities in the same cell we then pairwise sweep AABB check them. 
+			One known negative of this collision system however is that if multiple collisions happen in a step and a collision causes the end position to be inside another object then it won't be resolved properly.</li>
+		</ol>
+	</div>
+  </div>
+	
   <!-- Subsection contents-->
   <div id="3dmaze-info" class="subsection-content hidden w3-container">
 	<a href="javascript:show_portfolio()" style="float:left; width:100%;"><- BACK</a>
@@ -388,6 +440,43 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif}
 		</p>
 	</div>
   </div>
+  
+   <!-- subsection contents -->
+  <div id="first-info" class="subsection-content hidden">
+	<a href="javascript:show_portfolio()" style="float:left; width:98%;margin-left:2%;"><- BACK</a>
+	<h2 class="subsection-title"><b>FIRST and FOLLOW set computator</b></h2>
+	<br><br>
+	<div style="width:98%;float:left;display:table-cell;margin-left:2%;">
+		<a style="text-align:left; font-size:16px;" href="https://github.com/Necrokamios/FirstAndFollowSets"><u><b>Github Repository</u></b></a>
+		<ul>
+			<li>The file is hardcoded to take in the filenames "terminals_input.txt", "language_input.txt" and outputs to "FnF_Sets_Output.txt" (as well as to console). </li>
+			<li>Included in the github repository is the input text files used for Lua 5.1 (output also), any subsititute language can be computed in the same format.</li>
+		</ul>
+		<br>
+		<h6 style="text-align:left;">Description:</h6>
+		<p class="subsection-mediumtext">
+		This program finds the FIRST, FOLLOW and FIRST+ sets that define what elements can be first encountered when reading an expression and what elements can follow it. FIRST+ is an extension of FOLLOW sets 
+		where it takes into account whether or not an element that can follow that symbol can be reduced to nothing and transitively that element's FOLLOW set is now set union with the current symbol's FOLLOW set.
+		The operation of this program may take awhile due to the way I have programmed the defining of undefined elements in expressions (to be explained in more detail below).
+		Note: Terminal symbols are literals and do not expand. Non-terminal symbols are symbols that expand to expressions of other terminals or non-terminals.
+		<br><br>
+		The program operates in several stages:
+		</p>
+		<ol type="1" style="font-size:14px; margin-left:2%;">
+			<li>Parse the input text files. - This defines an symbol and its productions, some production symbols may not be defined at the time of encounter.</li>
+			<li>Update all production symbols with defintions.</li>
+			<li>Compute FIRST sets - this is done recursively.</li>
+			<li>Compute FOLLOW sets - this is done via looping through each symbol until a definition is found for a symbol, breaks if no update was done after two iterations.</li>
+			<li>Compute FIRST+ sets - At this point we assume all symbols are defined and apply the FIRST+ rule.</li>
+		</ol>
+		<p class="subsection-mediumtext">
+		Using looping to find the FOLLOW sets is much less efficient than using recursive, when I first wrote it I didn't put much thought into it. I had some concerns that doing it recusrsively may cause problems with cyclic defintions.
+		While these are on point, and looping would break out if there were no changes and even a helpful message to say "Hey, your grammar has cyclic defintions", but ultimately when defining a grammar cycles should be removed anyways so 
+		this concern was unnecessary. I could have changed it but ultimately I was more focused on correct results than speed so I never changed it.
+		</p>
+	</div>
+  </div>
+  
 
 <!-- End page content -->
 </div>
@@ -442,6 +531,7 @@ function link_click(clicked_element)
 			$('#enron-info').removeClass('hidden');
 			break;
 		case 3:
+			$('#first-info').removeClass('hidden');
 			break;
 		case 4:
 			$('#copybeat-info').removeClass('hidden');
@@ -450,8 +540,10 @@ function link_click(clicked_element)
 			$('#asteroids-info').removeClass('hidden');
 			break;
 		case 6:
+			$('#bitmap-info').removeClass('hidden');
 			break;
 		case 7:
+			$('#code-info').removeClass('hidden');
 			break;
 	}
 }
@@ -460,8 +552,11 @@ function reset_subsections()
 {
 	$('#3dmaze-info').addClass('hidden');
 	$('#enron-info').addClass('hidden');
+	$('#first-info').addClass('hidden');
 	$('#copybeat-info').addClass('hidden');
 	$('#asteroids-info').addClass('hidden');
+	$('#bitmap-info').addClass('hidden');
+	$('#code-info').addClass('hidden');
 	$('.vid').each(function() 
 		{
 			this.pause();
