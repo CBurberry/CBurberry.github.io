@@ -101,6 +101,14 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif}
 	  <!-- University projects-->
 	  <div style="width:50%;display:table-cell;" class="w3-container w3-red">
 	  <h3 style="text-align:center;"><u>University Projects</u></h3>
+	  <div class="w3-container w3-margin-bottom">
+		  <img src="images/pandaPallet.png" alt="pandapallet" style="width:100%;">
+		  <div class="w3-container w3-white">
+			<p><b>Panda Pallet (Android Game)<br>Created with:</b> Cocos2D-x/Box2D/C++</p>
+			<p>Working as part of multi-discipline team to create a tablet game from scratch in 3 months.<br>Move by holding the left/right side of the screen to move left/right.</p>
+			<a href="javascript:link_click(0)" style="float:right;padding-bottom:8px;color:blue;">read more...</a>
+		  </div>
+		</div>
 		<div class="w3-container w3-margin-bottom">
 		  <img src="images/3dMaze1st.png" alt="maze1stperson" style="width:50%; float:left;">
 		  <img src="images/3dMazeTop.png" alt="maze1stperson" style="width:50%; float:right;">
@@ -334,6 +342,39 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif}
 		</ol>
 	</div>
   </div>
+  
+  <!-- subsection contents -->
+  <div id="pandapallet-info" class="subsection-content hidden">
+	<a href="javascript:show_portfolio()" style="float:left; width:100%;"><- BACK</a>
+	<h2 class="subsection-title"><b>Panda Pallet (Android Game)</b></h2>
+	<br><br>
+	<div style="width:90%;float:left;display:table-cell; margin-left:5%; margin-right:5%;">
+		<h5 style="padding:16; text-align:center;">Preview video</h5>
+		<video class="vid" style="display:block; margin: 0 auto; width:100%" controls preload="none">
+		  <source src="videos/pandapallet.mp4" type="video/mp4">
+		  Your browser does not support the video tag or the mp4 filetype.
+		</video>
+		<p class="subsection-mediumtext">*This video is a recording made of the windows v0.6 build that was made at the end of the module.*</p>
+		<br>
+		<h6 style="text-align:left;">Description:</h6>
+		<p class="subsection-mediumtext">
+		This project was undertaken as part of Modules 1 & 2 of the GamerCamp postgraduate course at Birmingham City University. We prototyped the functionality in the first month and moved onto developing the feature 
+		& content complete version of the game over the next 2 months leading up to winter. The team was made up of 4 artists, 3 designers & 2 programmers. The game is a linear single-screne platformer.
+		<br>
+		Cocos2D-x doesn't provide a user interface so most aspects of the game were coded such as In-Game Menus, asset loading, interfacing with an open-source level editor (OGMO) and physics.
+		We decided to minimalistically use Box2D for physics where appropriate but made limited use of dynamic bodies and forces. Control is handled by Cocos2D's touch listeners which either have behaviour in the game through 
+		Cocos' Button/Widgets or whole screen touches which are then checked for position within the screen to determine position-based callbacks.
+		<br><br>
+		<br>
+		<h6 style="text-align:left;">Notes:</h6>
+		<ul style="font-size:14px;">
+			<li>This project will undergo a few changes before it's Google Play release in March. v0.6 is the current version as of time of creation.</li>
+			<li>The final application will be released under the GamerCamp developer name as that is the name of the postgraduate course.</li>
+			<li>I have chosen not to add a APK/repository link as I would need to double-check course permissions before doing so. If you have any requests please message/email me.</li>
+		</ul>
+		<br><br>
+	</div>
+  </div>
 	
   <!-- Subsection contents-->
   <div id="3dmaze-info" class="subsection-content hidden w3-container">
@@ -515,6 +556,9 @@ function link_click(clicked_element)
 	hide_portfolio();
 	switch(clicked_element) 
 	{
+		case 0:
+			$('#pandapallet-info').removeClass('hidden');
+			break;
 		case 1:
 			$('#3dmaze-info').removeClass('hidden');
 			break;
@@ -541,6 +585,7 @@ function link_click(clicked_element)
 
 function reset_subsections() 
 {
+	$('#pandapallet-info').addClass('hidden');
 	$('#3dmaze-info').addClass('hidden');
 	$('#enron-info').addClass('hidden');
 	$('#first-info').addClass('hidden');
