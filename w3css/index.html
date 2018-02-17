@@ -357,22 +357,23 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif}
 		</video>
 		<p class="subsection-mediumtext">*This video is a recording made of the windows v0.6 build that was made at the end of the module.*</p>
 		<br>
-		<a style="text-align:left; font-size:16px;" href="">https://github.com/CBurberry/ConfigFileReader<u><b>GitHub Repository Link for Pre-Production Level Loader</u></b></a>
-		<u><b>If you have any requests please email me and I will provide access to the repo for the full game source code.</u></b>
+		<a style="text-align:left; font-size:16px;" href="https://github.com/CBurberry/ConfigFileReader"><u><b>GitHub Repository Link for Pre-Production Level Loader</u></b></a>
+		<br>
+		<b>If you have any requests please email me and I will provide access to the repo for the full game source code.</b>
 		<br><br>
 		
 		<h6 style="text-align:left;">Description:</h6>
 		<p class="subsection-mediumtext">
 		This project was undertaken as part of Modules 1 & 2 of the GamerCamp postgraduate course at Birmingham City University. We prototyped the functionality in the first month and moved onto developing the feature 
 		& content complete version of the game over the next 2 months leading up to winter. The team was made up of 4 artists, 3 designers & 2 programmers. The game is a linear single-screen platformer.
-		<br>
+		<br><br>
 		Cocos2D-x doesn't provide a user interface so most aspects of the game were coded such as In-Game Menus, asset loading, interfacing with an open-source level editor (OGMO) and physics.
 		We decided to minimalistically use Box2D for physics where appropriate but made limited use of dynamic bodies and forces. Control is handled by Cocos2D's touch listeners which either have behaviour in the game through 
 		Cocos' Button/Widgets or whole screen touches which are then checked for position within the screen to determine position-based callbacks.
-		<br>
-		Between the two of us we split task into different areas to prevent having to merge our changes on perforce all too often. I wrote UI, Player Movement, Level Loading through OGMO Edtior XML files, platforms and the various types,
+		<br><br>
+		Between the two of us we split tasks into different areas to prevent having to merge our changes on perforce all too often. I wrote UI, player movement, level loading through OGMO Editor XML files, platforms and the various types,
 		wrote some changes to the OGMO editor as well to make it easier to use. In pre-production, we used a text-based level loading class I wrote for quick prototyping so that we didn't have to recompile the project every time to test 
-		code changes. This included loading some global variables and spawning lists for entities like platforms or collectables. When we moved to production we changed level/asset loading to the open-source OGMO editor. 
+		code changes (repo link above). This included loading some global variables and spawning lists for entities like platforms or collectables. When we moved to production we changed level/asset loading to the open-source OGMO editor. 
 		<br><br>
 		<br>
 		<h6 style="text-align:left;">Notes:</h6>
