@@ -85,7 +85,7 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif}
 		<div class="w3-container w3-margin-bottom">
 		  <img src="images/CodeBanner.png" alt="Codeimage" style="width:100%">
 		  <div class="w3-container w3-white">
-			<p><b>Additional Game-Engine Related Code <br>Created with:</b> C++ & SFML</p>
+			<p><b>Additional Game-Engine Related Code (2016) <br>Created with:</b> C++ & SFML</p>
 			<p>An index of some reuseable game system code that I made for failed game prototypes and may possibly reuse again:</p>
 			<ul>
 				<li>Fixed update game loop, variable rendering</li>
@@ -104,7 +104,7 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif}
 	  <div class="w3-container w3-margin-bottom">
 		  <img src="images/pandaPallet.png" alt="pandapallet" style="width:100%;">
 		  <div class="w3-container w3-white">
-			<p><b>Panda Palate Android Game (2017) <br>Created with:</b> Cocos2D-x/Box2D/C++</p>
+			<p><b>Panda Palate Android Game (2018) <br>Created with:</b> Cocos2D-x/Box2D/C++</p>
 			<p>Working as part of multi-discipline team to create a tablet game from scratch in 3 months.<br>Move by holding the left/right side of the screen to move left/right.</p>
 			<a href="javascript:link_click(0)" style="float:right;padding-bottom:8px;color:blue;">read more...</a>
 		  </div>
@@ -337,7 +337,7 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif}
 			the average update-per-frame ratio (e.g. 100 physic steps per 60 renders), set to render using SFML graphics, can be replaced. Also set a fixed framerate of 60fps (did this by consuming time in the frame if its < 1/60).</li>
 			<li>Controller code uses SFML's sf:Joystick class to check controllers' buttons and axis values. The problem with SFML's implementation is that it is reliant on the Windows Multimedia Library (preceeded by DirectInput) 
 			and doesn't include out of the box vibration control or separate axis binding of the left and right triggers (on a default xbox360 wired the L2 and R2 are on the same axis as negative and positive).</li>
-			<li>Collision code assumes that the screen is of a certain resolution and that the collision world is rebuilt every step. For each AABB that we chec collisions for we check what cells of the grid it occupies 
+			<li>Collision code assumes that the screen is of a certain resolution and that the collision world is rebuilt every step. For each AABB that we check collisions for we check what cells of the grid it occupies 
 			and add to the list of occupied entities in that cell to the cell data, when the cell data is sorted afterwards, if we get two or more entities in the same cell we then pairwise sweep AABB check them. 
 			One known negative of this collision system however is that if multiple collisions happen in a step and a collision causes the end position to be inside another object then it won't be resolved properly.</li>
 		</ol>
@@ -378,7 +378,7 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif}
 		<br>
 		<h6 style="text-align:left;">Notes:</h6>
 		<ul style="font-size:14px;">
-			<li>This project will undergo a few changes before it's Google Play release in March. v0.6 is the current version as of time of creation.</li>
+			<li>This project will undergo a few changes before it's Google Play release in May. v0.6 is the current version as of time of creation.</li>
 			<li>The final application will be released under the GamerCamp developer name as that is the name of the postgraduate course.</li>
 		</ul>
 		<br><br>
