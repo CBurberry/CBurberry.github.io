@@ -373,7 +373,7 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif}
 	<br><br>
 	<div style="width:90%;float:left;display:table-cell; margin-left:5%; margin-right:5%;">
 		<h4 style="padding:16; text-align:center;"><b>Preview video</b></h4>
-		<video class="vid" style="display:block; margin: 0 auto; width:75%" controls preload="none" poster="images/WIPDemoPoster.png">
+		<video class="vid" style="display:block; margin: 0 auto; width:75%" controls preload="auto" poster="images/WIPDemoPoster.PNG">
 		  <source src="videos/CameraTriggersDemo.mp4" type="video/mp4">
 		  Your browser does not support the video tag or the mp4 filetype.
 		</video>
@@ -479,7 +479,11 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif}
 		Cocos' Button/Widgets or whole screen touches which are then checked for position within the screen to determine position-based callbacks.
 		<br><br>
 		Between the two of us we split tasks into different areas to prevent having to merge our changes on perforce all too often. I wrote UI, player movement, level loading through OGMO Editor XML files, platforms and the various types,
-		wrote some changes to the OGMO editor as well to make it easier to use. In pre-production, we used a text-based level loading class I wrote for quick prototyping so that we didn't have to recompile the project every time to test 
+		wrote some changes to the OGMO editor as well to make it easier to use. In pre-production, we used a 
+		<a href= "https://github.com/CBurberry/ConfigFileReader">
+			text-based level loading class
+		</a>
+		 I wrote for quick prototyping so that we didn't have to recompile the project every time to test 
 		code changes (included in code excerpts repo link above). This included loading some global variables and spawning lists for entities like platforms or collectables. When we moved to production we changed level/asset loading to the open-source OGMO editor. 
 		</p>
 		<br>
