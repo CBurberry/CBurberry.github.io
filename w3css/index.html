@@ -111,7 +111,7 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif}
 			  <div class="w3-container w3-white">
 				<p><b>3D Metroidvania Game for PS4 (2018) <br>Creating with:</b> Unreal Engine 4.18/C++</p>
 				<p>Working as part of multi-discipline team (20+) to create a 3D metroidvania vertical slice for PlayStation 4.<br>
-				<b>WORK-IN-PROGRESS</b>: Currently in prototyping/pre-production phase</p>
+				<b>WORK-IN-PROGRESS</b>: Transitioning to production phase.</p>
 			  </div>
 			</div>
 		</a>
@@ -381,12 +381,17 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif}
 	<h2 class="subsection-title"><b>3D Metroidvania Game for PS4</b></h2>
 	<br><br>
 	<div style="width:90%;float:left;display:table-cell; margin-left:5%; margin-right:5%;">
-		<h4 style="padding:16; text-align:center;"><b>Preview video</b></h4>
-		<video class="vid" style="display:block; margin: 0 auto; width:75%" controls preload="auto" poster="images/WIPDemoPoster.PNG">
+		<h4 style="padding:16; text-align:center;"><b>Preview videos</b></h4>
+		<video class="vid" style="display:block; margin: 0 auto;" controls preload="auto" poster="images/WIPDemoPoster.PNG">
 		  <source src="videos/CameraTriggersDemo.mp4" type="video/mp4">
 		  Your browser does not support the video tag or the mp4 filetype.
 		</video>
-		<p class="subsection-mediumtext" style="text-align:center">*This video is a recording made of camera demo prototyping I had been preparing for pre-production sprint 2*</p>
+		<p class="subsection-mediumtext" style="text-align:center">*Recording made of camera demo prototyping I had been preparing for pre-production sprint 2*</p>
+		<video class="vid" style="display:block; margin: 0 auto;" controls preload="auto" poster="images/PrototypeFinalPoster.PNG">
+		  <source src="videos/PrototypeFinal.mp4" type="video/mp4">
+		  Your browser does not support the video tag or the mp4 filetype.
+		</video>
+		<p class="subsection-mediumtext" style="text-align:center">*Recording made of prototype final at the end of pre-production sprint 3*</p>
 		<br><br>
 		<div style="width:50%;display:table-cell;" class="w3-container">
 			<h4>GitHub Repository (Code Excerpts)</h4>
@@ -438,13 +443,10 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif}
 					A designer using it in a level mockup.
 				</a>
 			</li><br>
-			<li><b>Feasibility Reviews / Sprint Planning:</b> Whenever production have tasks or features on the backlog they would like to introduce on the sprint, I am the first port of call for feasibility estimates for programming effort required for a new feature. 
-			If a designer wants to consider a new feature, I'm the person who negotiates the design against it's implementation cost and proposes alternatives or rejects the proposition altogether.
-			</li>
+			<li><b>Player HUD & Enemy HP Display:</b> The player HUD consists of a set of simple progress bars that use custom assets and some additional images to display the currently selected element the player has active. The enemy HP bars are simple 
+				progress bars with no custom assets that are displayed in world space as a component above the enemies and is rotated to always face the currently active camera. This can be seen in the prototype final video.
+			</li><br>
 		</ul>
-		<p class="subsection-mediumtext">
-		My future work will involve looking at different camera options for highlighting objects in the environment (Resident Evil styled cinematic camera or VFX) and dynamic camera focus / transformation when battling several enemies at once.
-		</p>
 		<h6 style="text-align:left;"><b>Notes:</b></h6>
 		<ul style="font-size:16px;">
 			<li>All work seen here is in-progress and is not representative of the final product.</li>
